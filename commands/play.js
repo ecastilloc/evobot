@@ -9,14 +9,14 @@ module.exports = {
   name: "play",
   cooldown: 3,
   aliases: ["p"],
-  description: "Plays audio from YouTube or Soundcloud",
+  description: "Reproduce audio de YouTube",
   async execute(message, args) {
     const { channel } = message.member.voice;
 
     const serverQueue = message.client.queue.get(message.guild.id);
-    if (!channel) return message.reply("You need to join a voice channel first!").catch(console.error);
+    if (!channel) return message.reply("Necesitas unirte a chat de voz").catch(console.error);
     if (serverQueue && channel !== message.guild.me.voice.channel)
-      return message.reply(`You must be in the same channel as ${message.client.user}`).catch(console.error);
+      return message.reply(`Tienes que estar en el mismo canal que: ${message.client.user}`).catch(console.error);
 
     if (!args.length)
       return message

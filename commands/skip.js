@@ -3,7 +3,7 @@ const { canModifyQueue } = require("../util/EvobotUtil");
 module.exports = {
   name: "skip",
   aliases: ["s"],
-  description: "Skip the currently playing song",
+  description: "Salta la cancion activa",
   execute(message) {
     const queue = message.client.queue.get(message.guild.id);
     if (!queue)
